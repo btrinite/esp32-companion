@@ -12,6 +12,14 @@
 #define OLED_128x32_DISPLAY
 //#define OLED_128*64_DISPLAY
 
+#if defined(OLED_128x32_DISPLAY) && !defined(SSD1306_128_32)
+#error You must configure your display nodel in Adafruit_SSD1306.h as well
+#endif
+
+#if defined(OLED_128x64_DISPLAY) && !defined(SSD1306_128_64)
+#error You must configure your display nodel in Adafruit_SSD1306.h as well
+#endif
+
 #ifdef RGBLED_DISPLAY
 // RGB Led on original grumpy car to show vehicle status
 #include <Adafruit_NeoPixel.h>
